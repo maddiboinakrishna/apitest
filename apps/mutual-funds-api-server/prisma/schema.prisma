@@ -1,0 +1,18 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DB_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model MutualFund {
+  amcName    String?
+  category   String?
+  createdAt  DateTime @default(now())
+  id         String   @id @default(cuid())
+  riskLevel  String?
+  schemeName String?
+  updatedAt  DateTime @updatedAt
+}
