@@ -19,39 +19,43 @@ const nonExistingId = "nonExistingId";
 const existingId = "existingId";
 const CREATE_INPUT = {
   amcName: "exampleAmcName",
-  category: "exampleCategory",
   createdAt: new Date(),
+  fundType: "exampleFundType",
   id: "exampleId",
-  riskLevel: "exampleRiskLevel",
+  inceptionDate: new Date(),
+  nav: "exampleNav",
   schemeName: "exampleSchemeName",
   updatedAt: new Date(),
 };
 const CREATE_RESULT = {
   amcName: "exampleAmcName",
-  category: "exampleCategory",
   createdAt: new Date(),
+  fundType: "exampleFundType",
   id: "exampleId",
-  riskLevel: "exampleRiskLevel",
+  inceptionDate: new Date(),
+  nav: "exampleNav",
   schemeName: "exampleSchemeName",
   updatedAt: new Date(),
 };
 const FIND_MANY_RESULT = [
   {
     amcName: "exampleAmcName",
-    category: "exampleCategory",
     createdAt: new Date(),
+    fundType: "exampleFundType",
     id: "exampleId",
-    riskLevel: "exampleRiskLevel",
+    inceptionDate: new Date(),
+    nav: "exampleNav",
     schemeName: "exampleSchemeName",
     updatedAt: new Date(),
   },
 ];
 const FIND_ONE_RESULT = {
   amcName: "exampleAmcName",
-  category: "exampleCategory",
   createdAt: new Date(),
+  fundType: "exampleFundType",
   id: "exampleId",
-  riskLevel: "exampleRiskLevel",
+  inceptionDate: new Date(),
+  nav: "exampleNav",
   schemeName: "exampleSchemeName",
   updatedAt: new Date(),
 };
@@ -139,6 +143,7 @@ describe("MutualFund", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        inceptionDate: CREATE_RESULT.inceptionDate.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -151,6 +156,7 @@ describe("MutualFund", () => {
         {
           ...FIND_MANY_RESULT[0],
           createdAt: FIND_MANY_RESULT[0].createdAt.toISOString(),
+          inceptionDate: FIND_MANY_RESULT[0].inceptionDate.toISOString(),
           updatedAt: FIND_MANY_RESULT[0].updatedAt.toISOString(),
         },
       ]);
@@ -174,6 +180,7 @@ describe("MutualFund", () => {
       .expect({
         ...FIND_ONE_RESULT,
         createdAt: FIND_ONE_RESULT.createdAt.toISOString(),
+        inceptionDate: FIND_ONE_RESULT.inceptionDate.toISOString(),
         updatedAt: FIND_ONE_RESULT.updatedAt.toISOString(),
       });
   });
@@ -187,6 +194,7 @@ describe("MutualFund", () => {
       .expect({
         ...CREATE_RESULT,
         createdAt: CREATE_RESULT.createdAt.toISOString(),
+        inceptionDate: CREATE_RESULT.inceptionDate.toISOString(),
         updatedAt: CREATE_RESULT.updatedAt.toISOString(),
       })
       .then(function () {

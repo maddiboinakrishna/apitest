@@ -1,10 +1,12 @@
 import { StringNullableFilter } from "../../util/StringNullableFilter";
 import { StringFilter } from "../../util/StringFilter";
+import { DateTimeNullableFilter } from "../../util/DateTimeNullableFilter";
 
 export type MutualFundWhereInput = {
   amcName?: StringNullableFilter;
-  category?: StringNullableFilter;
+  fundType?: StringNullableFilter;
   id?: StringFilter;
-  riskLevel?: StringNullableFilter;
+  inceptionDate?: DateTimeNullableFilter;
+  nav?: StringNullableFilter;
   schemeName?: StringNullableFilter;
 };

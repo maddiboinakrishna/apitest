@@ -1,9 +1,10 @@
 export type MutualFund = {
   amcName: string | null;
-  category: string | null;
   createdAt: Date;
+  fundType: string | null;
   id: string;
-  riskLevel: string | null;
+  inceptionDate: Date | null;
+  nav: string | null;
   schemeName: string | null;
   updatedAt: Date;
 };

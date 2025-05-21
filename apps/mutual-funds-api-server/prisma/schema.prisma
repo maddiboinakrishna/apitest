@@ -8,11 +8,12 @@ generator client {
 }
 
 model MutualFund {
-  amcName    String?
-  category   String?
-  createdAt  DateTime @default(now())
-  id         String   @id @default(cuid())
-  riskLevel  String?
-  schemeName String?
-  updatedAt  DateTime @updatedAt
+  amcName       String?
+  createdAt     DateTime  @default(now())
+  fundType      String?
+  id            String    @id @default(cuid())
+  inceptionDate DateTime?
+  nav           String?
+  schemeName    String?
+  updatedAt     DateTime  @updatedAt
 }

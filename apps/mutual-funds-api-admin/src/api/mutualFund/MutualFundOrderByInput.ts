@@ -2,10 +2,11 @@ import { SortOrder } from "../../util/SortOrder";
 
 export type MutualFundOrderByInput = {
   amcName?: SortOrder;
-  category?: SortOrder;
   createdAt?: SortOrder;
+  fundType?: SortOrder;
   id?: SortOrder;
-  riskLevel?: SortOrder;
+  inceptionDate?: SortOrder;
+  nav?: SortOrder;
   schemeName?: SortOrder;
   updatedAt?: SortOrder;
 };

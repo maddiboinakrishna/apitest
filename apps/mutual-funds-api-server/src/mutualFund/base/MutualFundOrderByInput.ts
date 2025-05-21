@@ -39,7 +39,7 @@ class MutualFundOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  category?: SortOrder;
+  createdAt?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -50,7 +50,7 @@ class MutualFundOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  createdAt?: SortOrder;
+  fundType?: SortOrder;
 
   @ApiProperty({
     required: false,
@@ -72,7 +72,18 @@ class MutualFundOrderByInput {
   @Field(() => SortOrder, {
     nullable: true,
   })
-  riskLevel?: SortOrder;
+  inceptionDate?: SortOrder;
+
+  @ApiProperty({
+    required: false,
+    enum: ["asc", "desc"],
+  })
+  @IsOptional()
+  @IsEnum(SortOrder)
+  @Field(() => SortOrder, {
+    nullable: true,
+  })
+  nav?: SortOrder;
 
   @ApiProperty({
     required: false,

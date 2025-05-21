@@ -29,6 +29,14 @@ class MutualFund {
   amcName!: string | null;
 
   @ApiProperty({
+    required: true,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @Field(() => Date)
+  createdAt!: Date;
+
+  @ApiProperty({
     required: false,
     type: String,
   })
@@ -38,15 +46,7 @@ class MutualFund {
   @Field(() => String, {
     nullable: true,
   })
-  category!: string | null;
-
-  @ApiProperty({
-    required: true,
-  })
-  @IsDate()
-  @Type(() => Date)
-  @Field(() => Date)
-  createdAt!: Date;
+  fundType!: string | null;
 
   @ApiProperty({
     required: true,
@@ -58,6 +58,17 @@ class MutualFund {
 
   @ApiProperty({
     required: false,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @IsOptional()
+  @Field(() => Date, {
+    nullable: true,
+  })
+  inceptionDate!: Date | null;
+
+  @ApiProperty({
+    required: false,
     type: String,
   })
   @IsString()
@@ -66,7 +77,7 @@ class MutualFund {
   @Field(() => String, {
     nullable: true,
   })
-  riskLevel!: string | null;
+  nav!: string | null;
 
   @ApiProperty({
     required: false,

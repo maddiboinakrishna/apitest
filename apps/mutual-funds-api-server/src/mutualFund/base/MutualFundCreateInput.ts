@@ -11,7 +11,8 @@ https://docs.amplication.com/how-to/custom-code
   */
 import { InputType, Field } from "@nestjs/graphql";
 import { ApiProperty } from "@nestjs/swagger";
-import { IsString, MaxLength, IsOptional } from "class-validator";
+import { IsString, MaxLength, IsOptional, IsDate } from "class-validator";
+import { Type } from "class-transformer";
 
 @InputType()
 class MutualFundCreateInput {
@@ -37,7 +38,18 @@ class MutualFundCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  category?: string | null;
+  fundType?: string | null;
+
+  @ApiProperty({
+    required: false,
+  })
+  @IsDate()
+  @Type(() => Date)
+  @IsOptional()
+  @Field(() => Date, {
+    nullable: true,
+  })
+  inceptionDate?: Date | null;
 
   @ApiProperty({
     required: false,
@@ -49,7 +61,7 @@ class MutualFundCreateInput {
   @Field(() => String, {
     nullable: true,
   })
-  riskLevel?: string | null;
+  nav?: string | null;
 
   @ApiProperty({
     required: false,

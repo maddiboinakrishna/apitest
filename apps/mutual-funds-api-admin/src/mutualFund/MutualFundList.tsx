@@ -12,10 +12,11 @@ export const MutualFundList = (props: ListProps): React.ReactElement => {
     >
       <Datagrid rowClick="show" bulkActionButtons={false}>
         <TextField label="amcName" source="amcName" />
-        <TextField label="category" source="category" />
         <DateField source="createdAt" label="Created At" />
+        <TextField label="fundType	" source="fundType" />
         <TextField label="ID" source="id" />
-        <TextField label="riskLevel" source="riskLevel" />
+        <TextField label="inceptionDate	" source="inceptionDate" />
+        <TextField label="nav" source="nav" />
         <TextField label="schemeName" source="schemeName" />
         <DateField source="updatedAt" label="Updated At" />{" "}
       </Datagrid>
